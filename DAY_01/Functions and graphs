@@ -1,0 +1,103 @@
+"""
+Day 1 – Functions & Graphs (ML Math Foundation)
+-----------------------------------------------
+
+Concept:
+A function maps input -> output.
+
+Example:
+f(x) = 2x + 3
+
+If x = 1
+f(1) = 2(1) + 3 = 5
+
+Why is this important in Machine Learning?
+
+- Linear Regression = a function
+- Neural Networks = big mathematical functions
+- Loss functions = mathematical functions
+- Almost everything in ML is a function
+"""
+
+# -----------------------------------
+# 1️⃣ Basic Function Example
+# -----------------------------------
+
+def f(x):
+    return 2*x + 3
+
+print("f(1) =", f(1))
+
+
+# -----------------------------------
+# 2️⃣ Important Types of Functions
+# -----------------------------------
+
+import math
+
+# Linear Function
+def linear(x):
+    return 3*x + 2   # y = mx + c
+
+# Quadratic Function
+def quadratic(x):
+    return 2*(x**2) + 3*x + 1   # y = ax^2 + bx + c
+
+# Exponential Function
+def exponential(x):
+    return math.exp(x)   # y = e^x
+
+# Logarithmic Function
+def logarithmic(x):
+    return math.log(x)   # y = log(x)
+
+
+print("Linear f(5) =", linear(5))
+print("Quadratic f(2) =", quadratic(2))
+print("Exponential f(1) =", exponential(1))
+print("Logarithmic f(10) =", logarithmic(10))
+
+
+# -----------------------------------
+# 3️⃣ Practice Questions
+# -----------------------------------
+
+# Q1: If f(x) = 3x + 2, find f(5)
+def practice_function(x):
+    return 3*x + 2
+
+print("Practice: f(5) =", practice_function(5))
+
+
+# Q2: If y = 4x - 1, find slope
+# In y = mx + c, slope = m
+slope = 4
+print("Slope of y = 4x - 1 is:", slope)
+
+
+# Q3: What happens if slope increases?
+print("""
+If slope increases:
+- Line becomes steeper
+- Graph tilts more vertically
+""")
+
+
+# -----------------------------------
+# 4️⃣ ML Connection Summary
+# -----------------------------------
+"""
+ML Connection:
+
+Linear Regression:
+y = mx + c
+
+Neural Network:
+Output = function(inputs)
+
+Loss Function:
+Measures error using mathematical functions
+
+Conclusion:
+Machine Learning is built completely on functions.
+"""
