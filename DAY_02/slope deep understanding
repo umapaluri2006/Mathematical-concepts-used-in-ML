@@ -1,0 +1,97 @@
+"""
+Day 2 – Slope Deep Understanding (ML Foundation)
+------------------------------------------------
+
+1️⃣ What is Slope?
+
+Slope formula:
+
+m = (y2 - y1) / (x2 - x1)
+
+It tells:
+How much y changes when x changes.
+
+Example:
+Points (1,3) and (3,7)
+
+m = (7 - 3) / (3 - 1)
+m = 4 / 2
+m = 2
+
+Meaning:
+When x increases by 1, y increases by 2.
+"""
+
+# -----------------------------------
+# 1️⃣ Calculate slope using formula
+# -----------------------------------
+
+def calculate_slope(x1, y1, x2, y2):
+    return (y2 - y1) / (x2 - x1)
+
+m = calculate_slope(1, 3, 3, 7)
+print("Slope between (1,3) and (3,7):", m)
+
+
+# -----------------------------------
+# 2️⃣ Slope in Linear Regression
+# -----------------------------------
+"""
+In ML (Linear Regression):
+
+y = mx + c
+
+m = weight (slope)
+x = input feature
+y = prediction
+c = intercept
+
+Slope represents influence strength.
+"""
+
+def linear_model(x):
+    m = 2   # weight
+    c = 1   # intercept
+    return m*x + c
+
+print("Prediction when x = 5:", linear_model(5))
+
+
+
+# -----------------------------------
+# 3️⃣ Visual Intuition (Concept)
+# -----------------------------------
+"""
+Large slope   -> Steep line
+Small slope   -> Flat line
+Positive slope -> Upward graph
+Negative slope -> Downward graph
+Zero slope     -> Horizontal line
+"""
+
+
+# -----------------------------------
+# 4️⃣ Real ML Example
+# -----------------------------------
+"""
+Suppose:
+
+x = study hours
+y = marks
+
+y = 5x + 10
+
+Meaning:
+Every extra 1 hour of study
+Marks increase by 5.
+
+Slope = learning impact.
+"""
+
+def study_marks(hours):
+    return 5*hours + 10
+
+print("Marks for 4 study hours:", study_marks(4))
+
+print("\nConclusion:")
+print("Slope shows how strongly input affects output in ML.")
