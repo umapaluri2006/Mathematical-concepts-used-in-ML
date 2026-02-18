@@ -1,0 +1,111 @@
+"""
+Day 3 – Intercept & Full Linear Equation (ML Foundation)
+--------------------------------------------------------
+
+We know the linear equation:
+
+y = mx + c
+
+m = slope
+c = intercept (y-intercept)
+
+Intercept means:
+Value of y when x = 0
+"""
+
+# -----------------------------------
+# 1️⃣ Understanding Intercept
+# -----------------------------------
+
+def example_line(x):
+    m = 2
+    c = 5
+    return m*x + c
+
+print("When x = 0, y =", example_line(0))
+print("Intercept (c) = 5")
+print("-" * 40)
+
+
+# -----------------------------------
+# 2️⃣ Why Intercept Is Important in ML
+# -----------------------------------
+"""
+In Machine Learning (Linear Regression):
+
+ŷ = wx + b
+
+w = slope (weight)
+b = intercept (bias)
+
+Bias allows the model to shift up or down.
+
+Without intercept:
+y = mx
+
+The line must pass through (0,0)
+
+But real-world data usually does NOT pass through origin.
+So intercept (bias) is necessary.
+"""
+
+
+# -----------------------------------
+# 3️⃣ Real-Life ML Example
+# -----------------------------------
+"""
+Suppose:
+
+x = hours studied
+y = marks
+
+Model:
+y = 5x + 10
+
+Even if hours = 0:
+y = 10
+
+That 10 is baseline score (intercept).
+"""
+
+def study_marks(hours):
+    return 5*hours + 10
+
+print("Marks when study hours = 0:", study_marks(0))
+print("Marks when study hours = 3:", study_marks(3))
+print("-" * 40)
+
+
+# -----------------------------------
+# 4️⃣ Graph Intuition (Concept)
+# -----------------------------------
+"""
+Increasing intercept  -> Line shifts upward
+Decreasing intercept  -> Line shifts downward
+Slope unchanged       -> Steepness same
+
+Slope changes angle.
+Intercept changes position.
+"""
+
+
+# -----------------------------------
+# 5️⃣ Brain Exercise Answers
+# -----------------------------------
+
+# 1️⃣ In y = 4x - 3, intercept?
+intercept = -3
+print("Intercept in y = 4x - 3 is:", intercept)
+
+# 2️⃣ If intercept = 0?
+print("If intercept = 0, line passes through origin (0,0).")
+
+# 3️⃣ Removing intercept in real ML?
+print("Removing intercept can reduce model accuracy.")
+
+# 4️⃣ What changes steepness?
+print("Slope changes steepness, not intercept.")
+
+
+print("\nConclusion:")
+print("Intercept (bias) sets the baseline prediction in ML.")
