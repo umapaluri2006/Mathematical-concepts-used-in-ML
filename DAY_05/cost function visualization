@@ -1,0 +1,98 @@
+"""
+Day 5 – Cost Function Visualization (Core ML Intuition)
+-------------------------------------------------------
+
+J(m, c) = (1/n) * Σ (y - ŷ)^2
+
+Today we understand what this looks like.
+
+For simplicity:
+Fix c = 0
+
+Now cost depends only on m:
+
+J(m)
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# -----------------------------------
+# 1️⃣ Sample Data
+# -----------------------------------
+x = np.array([1, 2, 3, 4])
+y = np.array([50, 60, 65, 80])
+
+n = len(x)
+
+
+# -----------------------------------
+# 2️⃣ Cost Function (MSE)
+# -----------------------------------
+def compute_cost(m):
+    y_pred = m * x  # since c = 0
+    error = y - y_pred
+    return (1/n) * np.sum(error**2)
+
+
+# -----------------------------------
+# 3️⃣ Try Different m Values
+# -----------------------------------
+m_values = np.linspace(0, 30, 100)
+cost_values = []
+
+for m in m_values:
+    cost_values.append(compute_cost(m))
+
+
+# -----------------------------------
+# 4️⃣ Plot Cost vs m
+# -----------------------------------
+plt.plot(m_values, cost_values)
+plt.xlabel("Slope (m)")
+plt.ylabel("Cost J(m)")
+plt.title("Cost Function Visualization (Bowl Shape)")
+plt.show()
+
+
+"""
+What do we observe?
+
+- m = 0  -> High cost (bad fit)
+- Some middle value of m -> Lowest cost
+- Large m -> Cost increases again
+
+The graph is bowl-shaped (convex curve).
+
+Why bowl shape?
+Because we square the errors.
+
+Squared terms create curved shapes.
+"""
+
+
+print("""
+Big Insight:
+
+Linear Regression is NOT randomly drawing lines.
+
+It searches for the bottom of this bowl.
+
+Bottom point = Minimum cost
+Minimum cost = Best slope (m)
+
+That is how the best-fitting line is found.
+""")
+
+
+"""
+How do we reach bottom?
+
+1. Normal Equation (direct formula)
+2. Calculus (derivatives)
+3. Optimization algorithm -> Gradient Descent
+
+Next step in ML journey:
+Understanding derivatives.
+"""
